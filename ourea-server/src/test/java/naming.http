@@ -1,0 +1,41 @@
+PUT http://localhost:8080/naming/b
+Content-Type: application/json
+
+{
+  "serviceName": "b",
+  "ip": "localhost",
+  "port": 12345,
+  "signature": {
+    "clientId": "client-11111"
+  }
+}
+
+###
+
+PUT http://localhost:8081/naming/a
+Content-Type: application/json
+
+{
+  "serviceName": "a",
+  "ip": "localhost",
+  "port": 92345,
+  "signature": {
+    "clientId": "client-11111"
+  }
+}
+
+###
+
+GET http://localhost:8081/naming/a
+
+###
+
+POST http://localhost:8080/naming/lookup
+Content-Type: application/json
+
+[
+  "a",
+  "b"
+]
+
+###
