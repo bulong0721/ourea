@@ -13,8 +13,17 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(exclude = "timestamp")
 public class Signature implements Serializable {
+    /**
+     * 服务端ID
+     */
     private String serverId;
+    /**
+     * 客户端ID
+     */
     private String clientId;
+    /**
+     * 时间戳
+     */
     private long timestamp;
 
     public void signByServer(String serverId) {

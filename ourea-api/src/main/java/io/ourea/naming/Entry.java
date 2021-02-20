@@ -15,10 +15,25 @@ public interface Entry extends Serializable, Comparable<Entry> {
         SESSION;
     }
 
+    /**
+     * 条目类型
+     *
+     * @return
+     */
     Type entryType();
 
+    /**
+     * 条目元数据
+     *
+     * @return
+     */
     Map<String, String> getMetadata();
 
+    /**
+     * 条目签名
+     *
+     * @return
+     */
     Signature getSignature();
 
     default void signByServer(String serverId) {

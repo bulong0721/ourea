@@ -59,6 +59,11 @@
             </dependency>
             <dependency>
                 <groupId>io.ourea</groupId>
+                <artifactId>ourea-client</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.ourea</groupId>
                 <artifactId>ourea-api</artifactId>
                 <version>${revision}</version>
             </dependency>

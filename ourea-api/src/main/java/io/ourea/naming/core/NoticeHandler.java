@@ -10,9 +10,24 @@ import io.ourea.naming.pojo.Session;
  */
 public interface NoticeHandler {
 
+    /**
+     * 发送服务器节点注册事件
+     *
+     * @param instance
+     */
     void notifyRegister(Instance instance);
 
+    /**
+     * 发送服务器节点注销事件
+     *
+     * @param instance
+     */
     void notifyUnregister(Instance instance);
 
+    /**
+     * 发送服务器节点心跳事件
+     *
+     * @param session
+     */
     void notifyHeartbeat(Session session);
 }

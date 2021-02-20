@@ -11,6 +11,12 @@ import io.ourea.naming.pojo.Session;
  */
 public interface Supervise {
 
+    /**
+     * 发送心跳包，考虑使用长轮询替代
+     *
+     * @param heartbeat
+     * @return
+     * @throws NamingException
+     */
     Session ping(Heartbeat heartbeat) throws NamingException;
-
 }

@@ -88,7 +88,7 @@ public class ClusterHandler implements ClusterMessageHandler, GossipHandler {
         cluster.spreadGossip(message).subscribe();
     }
 
-    private static final String OPERATION = "/norn/operation";
+    private static final String OPERATION = "/ourea/operation";
     private static final String HEADER_REGISTER = "/register";
     private static final String HEADER_UNREGISTER = "/unregister";
     private static final String HEADER_HEARTBEAT = "/heartbeat";

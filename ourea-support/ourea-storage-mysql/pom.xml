@@ -10,29 +10,23 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>ourea-dubbo-registry</artifactId>
+    <artifactId>ourea-storage-mysql</artifactId>
     <packaging>jar</packaging>
-
-    <properties>
-        <dubbo.version>2.6.9</dubbo.version>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.ourea</groupId>
-            <artifactId>ourea-client</artifactId>
+            <artifactId>ourea-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo-registry-api</artifactId>
-            <version>${dubbo.version}</version>
-            <optional>true</optional>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.4</version>
         </dependency>
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo-common</artifactId>
-            <version>${dubbo.version}</version>
-            <optional>true</optional>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.23</version>
         </dependency>
     </dependencies>
 </project>

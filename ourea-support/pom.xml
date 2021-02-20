@@ -15,6 +15,7 @@
 
     <modules>
         <module>ourea-dubbo-registry</module>
+        <module>ourea-storage-mysql</module>
     </modules>
 
 </project>

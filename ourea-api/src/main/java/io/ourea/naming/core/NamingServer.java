@@ -19,5 +19,10 @@ public interface NamingServer extends Endpoint, Naming, Supervise {
         return Type.SERVER;
     }
 
+    /**
+     * 可用服务器节点列表
+     *
+     * @return
+     */
     Collection<MemberVO> aliveMembers();
 }

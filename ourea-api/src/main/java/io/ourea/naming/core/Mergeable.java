@@ -9,5 +9,11 @@ import io.ourea.naming.Entry;
  */
 public interface Mergeable<E extends Entry> {
 
+    /**
+     * 数据条目合并
+     *
+     * @param entry
+     * @return
+     */
     boolean merge(E entry);
 }

@@ -26,7 +26,17 @@ public interface NamingClient extends Endpoint, Naming, Subscribe, Supervise {
         return lookup(serviceName);
     }
 
+    /**
+     * 初始化注册中心客户端
+     *
+     * @throws NamingException
+     */
     void startup() throws NamingException;
 
+    /**
+     * 关闭注册中心客户端
+     *
+     * @throws NamingException
+     */
     void shutdown() throws NamingException;
 }

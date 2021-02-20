@@ -1,7 +1,5 @@
 package io.ourea.naming;
 
-//import org.mybatis.spring.annotation.MapperScan;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -13,7 +11,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @EnableScheduling
 @SpringBootApplication
-//@MapperScan(basePackages = "io.ourea.naming.mapper")
 public class NamingServerApplication {
 
     public static void main(String[] args) {
