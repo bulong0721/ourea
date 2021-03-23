@@ -29,8 +29,8 @@ public class NotificationController implements NoticeHandler {
     private static final List<NoticeVO> EMPTY_LIST = new ArrayList<>();
     @Autowired
     private Database database;
-    @Autowired
     @Lazy
+    @Autowired
     private NamingServer namingServer;
     private final UnifiedSetMultimap<String, DeferredResultWrapper> deferredResults = UnifiedSetMultimap.newMultimap();
 

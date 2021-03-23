@@ -17,10 +17,16 @@
         <spring-boot.version>2.3.6.RELEASE</spring-boot.version>
         <httpclient.version>4.5</httpclient.version>
         <maven.test.skip>true</maven.test.skip>
+        <grpc-java.version>1.36.0</grpc-java.version>
+        <proto-google-common-protos.version>1.18.1</proto-google-common-protos.version>
+        <protobuf-java.version>3.15.6</protobuf-java.version>
+        <protoc-gen-grpc-java.version>1.36.0</protoc-gen-grpc-java.version>
+        <guava.version>24.1.1-jre</guava.version>
     </properties>
 
     <modules>
         <module>ourea-api</module>
+        <module>ourea-adapter</module>
         <module>ourea-client</module>
         <module>ourea-server</module>
         <module>ourea-support</module>
@@ -68,6 +74,11 @@
                 <version>${revision}</version>
             </dependency>
             <dependency>
+                <groupId>io.ourea</groupId>
+                <artifactId>ourea-server</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
                 <groupId>io.scalecube</groupId>
                 <artifactId>scalecube-cluster</artifactId>
                 <version>2.6.6</version>
@@ -86,6 +97,48 @@
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpmime</artifactId>
                 <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty-shaded</artifactId>
+                <version>${grpc-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${grpc-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>protoc-gen-grpc-java</artifactId>
+                <version>${grpc-java.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.api.grpc</groupId>
+                <artifactId>proto-google-common-protos</artifactId>
+                <version>${proto-google-common-protos.version}</version>
+            </dependency>
+            <!-- gRPC dependency end -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -136,5 +189,21 @@
                 </executions>
             </plugin>
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
